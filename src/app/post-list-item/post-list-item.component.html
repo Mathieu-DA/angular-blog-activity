@@ -1,0 +1,15 @@
+<li [ngClass]="{
+'list-group-item': true,
+'list-group-item-success': postLoveIts > 0,
+'list-group-item-danger': 0 > postLoveIts
+}">
+  <div [ngStyle]="{color: getColor()}">
+    <div class="row justify-content-between">
+      <p class="col-sm-6" style="font-weight: bold; font-size: 2em">{{ postTitle }}</p>
+      <p class="col-sm-6" style="text-align: right; color: grey; font-size: 1.2em">{{ postDate | date: 'short' }}</p>
+    </div>
+    <p>{{ postContent }}</p>
+  </div>
+  <button class="btn btn-success" (click)="onLove()" style="margin-right: 2px">Love it!</button>
+  <button class="btn btn-danger" (click)="onHate()">Don't love it!</button>
+</li>
